@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sort Data by Height</title>
+</head>
+<body>
+    <h1>Sort Data by Shortest to Tallest</h1>
+    <button onclick="sortDataByHeight()">Sort Data</button>
+    <div id="output"></div>
+
+    <script>
+        // Custom comparator function for sorting by height
+        function sortByHeightComparator(a, b) {
+            return a.height - b.height;
+        }
+
+        // Main function to sort and display data
+        function sortDataByHeight() {
+            const dataset = [
+                { name: "Alice", height: 160 },
+                { name: "Bob", height: 175 },
+                { name: "Phil", height: 170 },
+                { name: "Ken", height: 170},
+                { name: "Joseph", height: 170 },
+                { name: "Arjun", height: 168 },
+                { name: "Jei", height: 171 },
+                { name: "Clester", height: 167 },
+                { name: "Lester", height: 170 },
+                { name: "Mejhay", height: 170 },
+                { name: "Zyrine", height: 162 },
+                { name: "Moreen", height: 163 },
+                { name: "Deanna", height: 165 },
+                { name: "Nong", height: 167 },
+                { name: "Princess", height: 166 },
+                { name: "Chowder", height: 166 },
+                { name: "Charish", height: 165 },
+                { name: "Sharra", height: 167 },
+                { name: "Jojo", height: 165 },
+                { name: "JC", height: 171 },
+                { name: "Hanz", height: 170 },
+                { name: "Jerome", height: 166 },
+                { name: "Bogart", height: 160 },
+                { name: "Rap", height: 165 },
+                { name: "Cye", height: 168 },
+                { name: "Aireen", height: 163 },
+                { name: "Mhiaca", height: 150 },
+                { name: "Uwu", height: 172 },
+                { name: "Yves", height: 169 },
+                { name: "Cj", height: 170 },
+                { name: "Zach", height: 185 }
+            ];
+
+            const sortedData = dataset.slice().sort(sortByHeightComparator);
+
+            const outputDiv = document.getElementById("output");
+            outputDiv.innerHTML = "<h2>Sorted Data by Height:</h2>";
+
+            sortedData.forEach(function (person) {
+                outputDiv.innerHTML += `${person.name}: ${person.height} cm<br>`;
+            });
+        }
+    </script>
+</body>
+</html>
